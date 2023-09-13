@@ -1,3 +1,4 @@
+// Custom middleware logs info to the console telling the request method that the client chose for the fetch request and the URL path it was made to.
 const cLog = (req, res, next) => {
     const fgCyan = '\x1b[36m';
     switch (req.method) {
@@ -14,7 +15,7 @@ const cLog = (req, res, next) => {
         break;
       }
       default: {
-        console.log(`${fgCyan}${req.method} request to ${req.path}`);
+        console.log(`(*)${fgCyan}${req.method} request to ${req.path}`);
       }
     }
   
